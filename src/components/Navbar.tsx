@@ -7,15 +7,15 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-6">
       <motion.div 
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="glass w-full max-w-7xl rounded-full px-6 py-3 flex items-center justify-between"
+        className="glass w-full max-w-5xl rounded-3xl px-8 py-4 flex items-center justify-between"
       >
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center font-display font-bold text-white">S</div>
-          <span className="font-display font-bold text-xl tracking-tight">SwimPay <span className="text-accent underline decoration-accent/30 underline-offset-4">Merchant</span></span>
+        <div className="flex items-center gap-3">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-accent flex items-center justify-center font-display font-bold text-white shadow-lg shadow-accent/20">S</div>
+          <span className="font-display font-bold text-xl tracking-tighter text-white">SwimPay <span className="text-accent/80 font-light">Merchant</span></span>
         </div>
 
         {/* Desktop Nav */}

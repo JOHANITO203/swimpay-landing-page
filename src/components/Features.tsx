@@ -62,15 +62,17 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="glass p-8 rounded-[2.5rem] hover:bg-white/10 transition-all group"
+              className="glass-card p-8 rounded-[2.5rem] hover:border-accent/30 transition-all group relative overflow-hidden"
             >
-              <div className={`w-14 h-14 rounded-2xl ${feature.bg} flex items-center justify-center ${feature.color} mb-6 group-hover:scale-110 transition-transform`}>
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-accent/5 blur-3xl rounded-full group-hover:bg-accent/10 transition-colors" />
+              
+              <div className={`w-14 h-14 rounded-2xl ${feature.bg} flex items-center justify-center ${feature.color} mb-6 group-hover:scale-110 transition-transform relative z-10`}>
                 <feature.icon size={28} />
               </div>
-              <h3 className="font-display font-bold text-xl mb-4 leading-snug">
+              <h3 className="font-display font-medium text-xl mb-4 leading-snug relative z-10 text-white">
                 {feature.title}
               </h3>
-              <p className="text-slate-400 leading-relaxed">
+              <p className="text-slate-400 leading-relaxed text-sm relative z-10">
                 {feature.description}
               </p>
             </motion.div>

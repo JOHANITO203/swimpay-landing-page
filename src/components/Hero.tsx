@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ChevronRight, Download, CheckCircle2, Clock, XCircle, AlertCircle } from 'lucide-react';
+import { ChevronRight, Download, CheckCircle2, Clock, XCircle, AlertCircle, Users } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 export default function Hero() {
@@ -21,15 +21,15 @@ export default function Hero() {
             Solution 100% Gratuite & Accessible
           </div>
           
-          <h1 className="font-display font-bold text-5xl md:text-7xl leading-tight mb-6">
-            Paiements en un clic <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-400">
-              pour votre business
+          <h1 className="font-display font-bold text-6xl md:text-8xl leading-[0.9] mb-8 tracking-tighter">
+            Paiements en <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-blue-400 to-cyan-300">
+              un seul clic
             </span>
           </h1>
           
-          <p className="text-slate-400 text-lg md:text-xl max-w-xl mb-8 leading-relaxed">
-            Offrez à vos clients l'expérience du paiement en un clic. Gérez votre comptabilité et vos accès business via l'app Merchant. Gratuit, sans frais cachés.
+          <p className="text-slate-400 text-lg md:text-2xl max-w-xl mb-10 leading-relaxed font-light">
+            Offrez à vos clients l'expérience du paiement instantané. Gérez votre comptabilité et vos accès business via l'app Merchant. <span className="text-white/80 font-medium tracking-tight whitespace-nowrap px-2 py-0.5 rounded bg-white/5 border border-white/10">100% Gratuit.</span>
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
@@ -52,76 +52,62 @@ export default function Hero() {
           className="relative flex justify-center lg:justify-end"
         >
           {/* Phone Frame */}
-          <div className="relative w-[320px] h-[640px] bg-[#050505] rounded-[3rem] p-3 shadow-2xl border-[8px] border-slate-800/50">
+          <div className="relative w-[320px] h-[640px] bg-[#050505] rounded-[3.5rem] p-3 shadow-[0_0_100px_rgba(0,0,0,0.5)] border-[1px] border-white/10 ring-8 ring-slate-900/50">
             {/* Screen Content */}
-            <div className="w-full h-full bg-[#0a192f] rounded-[2.2rem] overflow-hidden relative flex flex-col font-sans">
+            <div className="w-full h-full bg-[#020617] rounded-[2.8rem] overflow-hidden relative flex flex-col font-sans border border-white/5">
               
               {/* Fake Status Bar */}
-              <div className="h-10 px-6 flex justify-between items-center text-[10px] text-white/50">
-                <span>12:45</span>
-                <div className="flex gap-1">
-                  <div className="w-3 h-3 rounded-full border border-white/30" />
-                  <div className="w-4 h-3 rounded-sm border border-white/30" />
+              <div className="h-10 px-8 flex justify-between items-center text-[10px] text-white/40">
+                <span className="font-medium">12:45</span>
+                <div className="flex gap-1.5 items-center">
+                  <div className="w-3 h-3 rounded-full border border-white/20" />
+                  <div className="w-4 h-2.5 rounded-[2px] bg-white/20" />
                 </div>
               </div>
 
               {/* App Header */}
               <div className="px-6 pt-2 pb-6">
-                <p className="text-slate-400 text-sm">Bonjour, Merchant</p>
-                <h2 className="text-white font-display font-bold text-lg">Paiements reçus</h2>
+                <p className="text-slate-500 text-[11px] uppercase tracking-widest font-bold mb-1">Espace Merchant</p>
+                <div className="flex justify-between items-center">
+                  <h2 className="text-white font-display font-medium text-xl">Dashboard</h2>
+                  <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                    <Users size={14} className="text-slate-400" />
+                  </div>
+                </div>
               </div>
 
               {/* Balance Card */}
-              <div className="px-6 mb-6">
-                <div className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-6 shadow-lg relative overflow-hidden">
-                  <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-32 h-32 bg-white/10 blur-3xl rounded-full" />
-                  <p className="text-blue-100/70 text-xs mb-1">Moscou, Russie</p>
-                  <h3 className="text-white text-3xl font-bold mb-4 font-display italic">85 920,50 ₽</h3>
-                  <div className="flex justify-between items-center text-xs text-blue-100/80">
-                    <span className="font-mono">**** 5421</span>
-                    <span className="opacity-50 italic uppercase">Main Card</span>
+              <div className="px-4 mb-6">
+                <div className="bg-gradient-to-br from-blue-600 via-indigo-700 to-brand-900 rounded-[2rem] p-6 shadow-2xl relative overflow-hidden border border-white/10">
+                  <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-32 h-32 bg-accent/20 blur-3xl rounded-full" />
+                  <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-32 h-32 bg-blue-400/10 blur-3xl rounded-full" />
+                  <p className="text-blue-100/60 text-[10px] uppercase tracking-widest font-bold mb-2">Balance Actuelle</p>
+                  <h3 className="text-white text-3xl font-bold mb-6 font-display tracking-tight">85 920,50 ₽</h3>
+                  <div className="flex justify-between items-center">
+                    <div className="flex -space-x-2">
+                       {[1,2,3].map(i => <div key={i} className="w-6 h-6 rounded-full border-2 border-brand-800 bg-slate-700" />)}
+                    </div>
+                    <span className="text-[10px] text-blue-100/40 font-mono tracking-widest text-right">MASTER • 5421</span>
                   </div>
                 </div>
               </div>
 
-              {/* Status Widgets */}
-              <div className="grid grid-cols-2 gap-3 px-6 mb-6">
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-3 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-yellow-500/20 flex items-center justify-center text-yellow-500">
-                    <AlertCircle size={16} />
+              {/* Quick Actions / Widgets Refined */}
+              <div className="grid grid-cols-2 gap-2.5 px-4 mb-6">
+                {[
+                  { label: 'À confirmer', value: '12', icon: AlertCircle, color: 'text-yellow-500', bg: 'bg-yellow-500/10' },
+                  { label: 'Confirmés', value: '142', icon: CheckCircle2, color: 'text-accent', bg: 'bg-accent/10' },
+                ].map((w, i) => (
+                  <div key={i} className="bg-white/[0.03] border border-white/5 rounded-2xl p-3.5 flex items-center gap-3">
+                    <div className={cn("w-9 h-9 rounded-xl flex items-center justify-center", w.bg, w.color)}>
+                      <w.icon size={18} />
+                    </div>
+                    <div>
+                      <p className="text-[9px] text-slate-500 font-bold uppercase tracking-tighter">{w.label}</p>
+                      <p className="text-white font-bold text-base leading-tight">{w.value}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-[10px] text-slate-400">À confirmer</p>
-                    <p className="text-white font-bold text-sm">12</p>
-                  </div>
-                </div>
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-3 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center text-green-500">
-                    <CheckCircle2 size={16} />
-                  </div>
-                  <div>
-                    <p className="text-[10px] text-slate-400">Confirmés</p>
-                    <p className="text-white font-bold text-sm">142</p>
-                  </div>
-                </div>
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-3 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-slate-500/20 flex items-center justify-center text-slate-400">
-                    <Clock size={16} />
-                  </div>
-                  <div>
-                    <p className="text-[10px] text-slate-400">Expirés</p>
-                    <p className="text-white font-bold text-sm">5</p>
-                  </div>
-                </div>
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-3 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center text-red-500">
-                    <XCircle size={16} />
-                  </div>
-                  <div>
-                    <p className="text-[10px] text-slate-400">Rejetés</p>
-                    <p className="text-white font-bold text-sm">2</p>
-                  </div>
-                </div>
+                ))}
               </div>
 
               {/* History Mockup */}
