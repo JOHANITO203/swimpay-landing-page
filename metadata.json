@@ -1,0 +1,8 @@
+{
+  "name": "SwimPay Merchant",
+  "description": "Premium landing page for SwimPay Merchant, the simple way to track business payments, review merchant transactions, and manage receiving methods on Android.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
